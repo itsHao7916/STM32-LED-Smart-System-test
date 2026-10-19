@@ -94,3 +94,49 @@ flowchart TD
 | 紅色 LED | 待確認 | 緊急預警閃爍 |
 | 確認按鈕 | 待確認 | EXTI 按鈕中斷 |
 
+
+## 八、專案目錄結構
+
+```text
+STM32-LED-Smart-System/
+├── README.md
+├── Core/
+│   ├── Inc/
+│   │   └── main.h
+│   └── Src/
+│       ├── main.c
+│       └── stm32g4xx_it.c
+├── Drivers/
+└── STM32-LED-Smart-System.ioc
+```
+
+### 主要檔案說明
+
+- `README.md`：專題介紹、系統流程及操作說明。
+- `Core/Src/main.c`：LED 狀態控制、隨機切換及按鈕處理。
+- `Core/Src/stm32g4xx_it.c`：中斷服務程式。
+- `Core/Inc/main.h`：主要宣告及 GPIO 腳位定義。
+- `Drivers/`：STM32 HAL 驅動程式。
+- `.ioc`：STM32CubeMX 的硬體設定檔。
+
+
+## 九、建置與執行方式
+
+### 開發環境
+
+- 開發板：STM32 NUCLEO-G474RE
+- 開發工具：STM32CubeIDE、STM32CubeMX
+- 程式語言：C
+- 函式庫：STM32 HAL Library
+
+### 執行步驟
+
+1. 使用 STM32CubeIDE 開啟專題專案。
+2. 確認 GPIO、EXTI、Timer/PWM 等周邊設定。
+3. 依照腳位配置連接 LED、限流電阻與按鈕。
+4. 點擊 Build 編譯程式。
+5. 透過 USB 與 ST-LINK 將程式燒錄至開發板。
+6. 觀察綠燈、黃燈、紅燈的狀態切換。
+7. 當紅燈閃爍時，按下按鈕測試警報解除功能。
+
+> 本章節為預計的建置與測試流程，實作完成後將依實際操作結果更新。
