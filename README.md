@@ -173,7 +173,6 @@ flowchart TD
 | 紅色 LED | PC6 | 緊急預警閃爍 |
 | 確認按鈕 | PC9 | EXTI 按鈕中斷 |
 
-> 腳位將依照 STM32CubeMX 的實際設定進行更新。
 
 </details>
 
